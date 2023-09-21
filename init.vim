@@ -1,4 +1,5 @@
 """Load and install Plugins"""
+"Test
 call plug#begin()
 ""	Plug 'preservim/nerdtree' |
 ""		\ Plug 'Xuyuanp/nerdtree-git-plugin' |
