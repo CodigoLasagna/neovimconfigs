@@ -47,6 +47,12 @@ call plug#begin()
 	Plug 'thosakwe/vim-flutter'
 	Plug 'natebosch/vim-lsc'
 	Plug 'natebosch/vim-lsc-dart'
+	"Telescope
+	Plug 'princejoogie/dir-telescope.nvim'
+	Plug 'BurntSushi/ripgrep'
+	Plug 'sharkdp/fd'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 """Plugin Options"""
@@ -292,7 +298,6 @@ function CloseWin()
 endfunction
 
 """Basic configs"""
-lcd ~/work/coding/
 let g:loaded_perl_provider = 0
 set list lcs=tab:\│\ ,space:.
 set fillchars=eob:\ ,fold:\ ,vert:\│
@@ -374,7 +379,9 @@ nnoremap <F9> :call Writing()<CR>
 nnoremap <C-l><C-k> :NvimTreeToggle<CR>
 "let NERDTreeMapActivateNode='<space>'
 "MiniMap"
-nmap <C-k><C-m> :MinimapToggle<CR>
+nmap <C-l><C-m> :MinimapToggle<CR>
+"Telescope"
+nmap <C-l><C-o> :Telescope<CR>
 "vsnip"
 imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
 smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
