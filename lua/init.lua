@@ -301,7 +301,7 @@ if hostname then
 		vim.cmd('lcd ~/gen/archives/work/coding/')
 	elseif hostname == "EONIX" then
 		vim.cmd('colorscheme neohub')
-		vim.cmd('lcd work/coding/')
+		vim.cmd('lcd ~/work/coding/')
 	else
 		vim.cmd('colorscheme quiet')
 	end
