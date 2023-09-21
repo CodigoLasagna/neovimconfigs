@@ -296,11 +296,13 @@ end
 local hostname = get_hostname()
 
 if hostname then
-  if hostname == "LEGION" then
-    vim.cmd('colorscheme eros_net')
-  elseif hostname == "EONIX" then
-    vim.cmd('colorscheme neohub')
-  else
-    vim.cmd('colorscheme quiet')
-  end
+	if hostname == "LEGION" then
+		vim.cmd('colorscheme eros_net'),
+		lcd ~/gen/archives/work/coding/
+	elseif hostname == "EONIX" then
+		vim.cmd('colorscheme neohub'),
+		work/coding/
+	else
+		vim.cmd('colorscheme quiet')
+	end
 end
