@@ -11,5 +11,7 @@ require('pluginsconfigs.telescopeconfile')
 
 -- load my own configs
 require('myconfs.ecosystem')
+require('myconfs.compileconf')
+require('myconfs.keybinds')
 
 vim.opt.laststatus = 3;

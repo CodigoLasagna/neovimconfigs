@@ -292,11 +292,6 @@ function Compile()
 	:normal a
 endfunction
 
-function CloseWin()
-	:b#
-	:bd#
-endfunction
-
 """Basic configs"""
 let g:loaded_perl_provider = 0
 set list lcs=tab:\│\ ,space:.
@@ -330,48 +325,6 @@ set ttyfast                 " Speed up scrolling in Vim
 set formatoptions-=cro
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"""KeyBindings"""
-"Movement"
-"normal"
-nnoremap h ;
-nnoremap j h
-nnoremap k j
-nnoremap l k
-nnoremap ; l
-
-"visual"
-vnoremap h ;
-vnoremap j h
-vnoremap k j
-vnoremap l k
-vnoremap ; l
-"move between panes"
-nnoremap <A-j> <C-w>h
-nnoremap <A-k> <C-w>j
-nnoremap <A-l> <C-w>k
-nnoremap <A-;> <C-w>l
-"Exit insert mode"
-"inoremap ii <Esc>
-inoremap jk <Esc>
-tnoremap jk <C-\><C-n>
-"inoremap kj <Esc>
-"vnoremap kj <Esc>
-"panels/buffers"
-nnoremap <C-w> :call CloseWin()<CR>
-nnoremap <A-v> <C-w>v
-nnoremap <A-s> <C-w>s
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bp<CR>
-"Resize Panels"
-nnoremap <A-a>j :vertical resize +5<CR>
-nnoremap <A-a>; :vertical resize -5<CR>
-nnoremap <A-a>l :resize +5<CR>
-nnoremap <A-a>k :resize -5<CR>
-nnoremap <A-q> :close<CR>
-"exit all"
-nnoremap <C-c> :wqa<CR>
-tnoremap <Esc> <C-\><C-n>
-"tnoremap jk <esc>
 "My functions"
 nnoremap <F10> :call Focus()<CR>
 nnoremap <F9> :call Writing()<CR>
@@ -389,7 +342,6 @@ imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 set termguicolors
-"colorscheme neohub
 set guicursor+=i:ver100-iCursor
 set guicursor+=i:blinkon1
 """Compilers"""
