@@ -7,8 +7,10 @@ vim.g.loaded_netrwPlugin = 1
 -- OR setup with some options
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
-	prefer_startup_root = true,
 	auto_reload_on_write = true,
+	prefer_startup_root = false,
+	sync_root_with_cwd = false,
+	respect_buf_cwd = false,
 	view = {
 		width = 30,
 		number = true,

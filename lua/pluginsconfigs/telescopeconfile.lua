@@ -6,8 +6,6 @@ require('telescope').setup{
 		--	"shorten" -- Cambia esto a "shorten" o "tail" si prefieres una ruta más corta.
 		--},
 		-- config_key = value,
-		prompt_prefix = "",
-		cwd = vim.fn.expand('%:p:h'),
 		mappings = {
 			i = {
 				-- map actions.which_key to <C-h> (default: <C-/>)
@@ -40,4 +38,4 @@ require('telescope').setup{
 		-- please take a look at the readme of the extension you want to configure
 	}
 }
-require("telescope").load_extension("dir")
+--require("telescope").load_extension("dir")
