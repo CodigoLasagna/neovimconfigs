@@ -16,9 +16,11 @@ if hostname then
 	if hostname == "LEGION" then
 		vim.cmd('colorscheme eros_net')
 		vim.cmd('lcd ~/gen/archives/work/coding/')
+		vim.cmd(":let g:notes_directories = ['~/gen/archives/work/coding/notes/']")
 	elseif hostname == "EONIX" then
 		vim.cmd('colorscheme neohub')
 		vim.cmd('lcd ~/work/coding/')
+		vim.cmd(":let g:notes_directories = ['~/work/coding/notas/']")
 	else
 		vim.cmd('colorscheme quiet')
 	end

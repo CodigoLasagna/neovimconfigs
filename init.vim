@@ -1,27 +1,28 @@
 """Load and install Plugins"""
 "Test
 call plug#begin()
-""	Plug 'preservim/nerdtree' |
-""		\ Plug 'Xuyuanp/nerdtree-git-plugin' |
-""		\ Plug 'ryanoasis/vim-devicons'
-	"Plug 'uiiaoo/java-syntax.vim'
-	Plug 'xolox/vim-notes'
-	Plug 'xolox/vim-misc'
 	Plug 'nvim-treesitter/nvim-treesitter'
-	Plug 'kristijanhusak/vim-dadbod-ui'
-	Plug 'https://github.com/adelarsq/image_preview.nvim'
-	Plug 'edluffy/hologram.nvim'
-	Plug 'sheerun/vim-polyglot'
-	Plug 'habamax/vim-godot'
+	Plug 'nvim-treesitter/playground'
+	""""Plug 'kristijanhusak/vim-dadbod-ui'
+	""""Plug 'habamax/vim-godot'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'kyazdani42/nvim-tree.lua'
-	Plug 'vimsence/vimsence'
 	Plug 'nvim-lualine/lualine.nvim'
-	Plug 'airblade/vim-gitgutter'
-	Plug 'tpope/vim-fugitive'
-	Plug 'lambdalisue/suda.vim'
-	Plug 'neovim/nvim-lspconfig'
+	Plug 'stevearc/vim-arduino'
+	Plug 'wfxr/minimap.vim'
+	Plug 'pacha/vem-tabline'
+	Plug 'honza/vim-snippets'
+	""" Plugins for writing
+	""""Plug 'dpelle/vim-LanguageTool'
+	""""Plug 'lervag/vimtex'
+	""""""flutter
+	""""Plug 'dart-lang/dart-vim-plugin'
+	""""Plug 'thosakwe/vim-flutter'
+	""""Plug 'natebosch/vim-lsc'
+	""""Plug 'natebosch/vim-lsc-dart'
+	""cmp
 	Plug 'norcalli/nvim-colorizer.lua'
+	Plug 'neovim/nvim-lspconfig'
 	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
@@ -29,30 +30,32 @@ call plug#begin()
 	Plug 'hrsh7th/vim-vsnip'
 	Plug 'hrsh7th/vim-vsnip-integ'
 	Plug 'hrsh7th/nvim-cmp'
-	Plug 'stevearc/vim-arduino'
-	Plug 'Raimondi/delimitMate'
-	Plug 'junegunn/limelight.vim'
-	Plug 'junegunn/goyo.vim'
-	Plug 'tpope/vim-repeat'
-	Plug 'bfrg/vim-cpp-modern'
-	Plug 'wfxr/minimap.vim'
-	Plug 'pacha/vem-tabline'
-	Plug 'honza/vim-snippets'
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-	"" Plugins for writing
-	Plug 'dpelle/vim-LanguageTool'
-	Plug 'lervag/vimtex'
-	""flutter
-	Plug 'dart-lang/dart-vim-plugin'
-	Plug 'thosakwe/vim-flutter'
-	Plug 'natebosch/vim-lsc'
-	Plug 'natebosch/vim-lsc-dart'
-	"Telescope
+	""Telescope
 	Plug 'princejoogie/dir-telescope.nvim'
 	Plug 'BurntSushi/ripgrep'
 	Plug 'sharkdp/fd'
-	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	"Neorg test
+	Plug 'nvim-neorg/neorg'
+	"Git
+	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
+	"""QOF
+	"openclose brackets
+	Plug 'Raimondi/delimitMate'
+	"show in discord
+	Plug 'vimsence/vimsence'
+	"Allows to suda write/read
+	Plug 'lambdalisue/suda.vim'
+	"Something like light selected block code
+	Plug 'junegunn/limelight.vim'
+	"focus mode
+	Plug 'junegunn/goyo.vim'
+	"todo comments
+	Plug 'folke/trouble.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'folke/todo-comments.nvim'
 call plug#end()
 
 """Plugin Options"""
@@ -360,5 +363,5 @@ endif
 
 
 "Notes
-:let g:notes_directories = ['~/work/coding/notas/']
 :let g:notes_suffix = '.txt'
+:set conceallevel=2
