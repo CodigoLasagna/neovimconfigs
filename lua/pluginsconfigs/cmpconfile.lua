@@ -44,8 +44,8 @@ cmp.setup.cmdline(':', {
 	})
 })
 
--- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['pylsp'].setup {
 	settings = {
@@ -68,11 +68,17 @@ require('lspconfig')['html'].setup {
 	cmd = { "vscode-html-language-server", "--stdio" },
 	capabilities = capabilities,
 }
+
 require('lspconfig')['jdtls'].setup {
-	capabilities = capabilities,
 	root_dir = function(fname)
 		return vim.fn.getcwd()
 	end,
+	cmd = {
+		'jdtls',
+		'-vmargs',
+		'-Dorg.eclipse.jdt.ls.taskTags=',
+		'-Dorg.eclipse.jdt.ls.taskPriorities='
+	},
 }
 require('lspconfig')['r_language_server'].setup {
 	capabilities = capabilities
