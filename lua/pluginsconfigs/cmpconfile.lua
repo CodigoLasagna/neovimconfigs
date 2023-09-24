@@ -70,15 +70,16 @@ require('lspconfig')['html'].setup {
 }
 
 require('lspconfig')['jdtls'].setup {
+	capabilities = capabilities,
 	root_dir = function(fname)
 		return vim.fn.getcwd()
 	end,
-	cmd = {
-		'jdtls',
-		'-vmargs',
-		'-Dorg.eclipse.jdt.ls.taskTags=',
-		'-Dorg.eclipse.jdt.ls.taskPriorities='
-	},
+	--- cmd = {
+	--- 	'jdtls',
+	--- 	'-vmargs',
+	--- 	'-Dorg.eclipse.jdt.ls.taskTags=',
+	--- 	'-Dorg.eclipse.jdt.ls.taskPriorities='
+	--- },
 }
 require('lspconfig')['r_language_server'].setup {
 	capabilities = capabilities

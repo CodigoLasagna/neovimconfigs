@@ -1,12 +1,13 @@
-local work_dir = ""
-local school_dir = ""
+local main_dir = ""
 if (Hostname == "LEGION") then
-	work_dir = "~/gen/archives/work/coding/notes/work"
-	school_dir = "~/gen/archives/work/coding/notes/school"
+	main_dir = "~/gen/archives/work/coding/notes/"
 elseif (Hostname == "EONIX") then
-	work_dir = "~/work/coding/notes/work"
-	school_dir = "~/work/coding/notes/school"
+	main_dir = "~/work/coding/notes/"
 end
+
+local work_dir = main_dir .. "work"
+local school_dir = main_dir .. "school"
+local mundane_dir = main_dir .. "mundane"
 
 require'neorg'.setup
 {
@@ -26,6 +27,9 @@ require'neorg'.setup
 			{
 				workspaces =
 				{
+					main = main_dir,
+					default = main_dir,
+					mundane = mundane_dir,
 					work = work_dir,
 					school = school_dir,
 				}
