@@ -9,15 +9,15 @@ function Get_hostname()
 end
 
 -- save hostname --
-local hostname = Get_hostname()
+Hostname = Get_hostname() -- will be global
 
 -- apply some configs deppending on the ecosystem --
-if hostname then
-	if hostname == "LEGION" then
+if Hostname then
+	if Hostname == "LEGION" then
 		vim.cmd('colorscheme eros_net')
 		vim.cmd('lcd ~/gen/archives/work/coding/')
 		vim.cmd(":let g:notes_directories = ['~/gen/archives/work/coding/notes/']")
-	elseif hostname == "EONIX" then
+	elseif Hostname == "EONIX" then
 		vim.cmd('colorscheme neohub')
 		vim.cmd('lcd ~/work/coding/')
 		vim.cmd(":let g:notes_directories = ['~/work/coding/notas/']")

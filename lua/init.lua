@@ -1,5 +1,7 @@
---preview--
---require("image_preview").setup({})
+-- load my own configs
+require('myconfs.ecosystem')
+require('myconfs.compileconf')
+require('myconfs.keybinds')
 
 ---load config files for plugins
 require('pluginsconfigs.treesitterconfile')
@@ -11,10 +13,6 @@ require('pluginsconfigs.neorgconfile')
 require('pluginsconfigs.todonotesconfile')
 
 
--- load my own configs
-require('myconfs.ecosystem')
-require('myconfs.compileconf')
-require('myconfs.keybinds')
 
 vim.opt.laststatus = 3;
 
