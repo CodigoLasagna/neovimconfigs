@@ -48,17 +48,17 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['pylsp'].setup {
+	capabilities = capabilities,
 	settings = {
 		pylsp = {
 			plugins = {
 				mccabe = { enabled = false },
-				pycodestyle = { enabled = true },
+				pycodestyle = { enabled = false },
 				pyflakes = { enabled = true },
-				pylint = { enabled = false },
+				pylint = { enabled = true },
 			}
 		}
 	},
-	capabilities = capabilities
 }
 require('lspconfig')['clangd'].setup {
 	capabilities = capabilities,
