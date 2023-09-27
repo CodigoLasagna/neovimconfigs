@@ -96,6 +96,8 @@ hi String ctermfg=183 ctermbg=NONE cterm=NONE guifg=#4D9BE6 guibg=NONE gui=NONE
 hi Number ctermfg=208 ctermbg=NONE cterm=NONE guifg=#FB6B1D guibg=NONE gui=NONE
 hi PreProc ctermfg=129 ctermbg=NONE cterm=NONE guifg=#0EAF9B guibg=NONE gui=NONE
 hi Identifier ctermfg=75 ctermbg=NONE cterm=NONE guifg=#C03682 guibg=NONE gui=NONE
+hi Label ctermfg=63 ctermbg=NONE cterm=NONE guifg=#F0D400 guibg=NONE gui=NONE
+hi Constructor ctermfg=63 ctermbg=NONE cterm=NONE guifg=#F04F79 guibg=NONE gui=NONE
 hi Function ctermfg=156 ctermbg=NONE cterm=NONE guifg=#0EAF9B guibg=NONE gui=NONE
 hi Statement ctermfg=63 ctermbg=NONE cterm=NONE guifg=#F04F78 guibg=NONE gui=NONE
 hi Type ctermfg=75 ctermbg=NONE cterm=NONE guifg=#F0D400 guibg=NONE gui=NONE
@@ -114,7 +116,7 @@ hi link Conditional Statement
 hi link Repeat Statement
 hi link Operator Statement
 hi link Keyword Statement
-hi link Label Statement
+"hi link Label Statement
 hi link Exception Statement
 hi link Include Preproc
 hi link Define Statement
@@ -196,3 +198,9 @@ hi LspInformationText ctermfg=24 ctermbg=NONE cterm=NONE guifg=#4D9BE6 guibg=#16
 hi LspInformationHighlight cterm=undercurl gui=undercurl guisp=#4D9BE6
 hi LspInformationVirtualText ctermfg=24 ctermbg=NONE cterm=NONE guifg=#4D9BE6 guibg=#162c2e gui=NONE
 "}}}
+
+"Neorg
+hi @text.strong gui=bold
+
+hi link @neorg.headings.2.title Constructor
+hi link @neorg.headings.2.prefix Constructor

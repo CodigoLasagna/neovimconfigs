@@ -40,6 +40,7 @@ exe "syn match cOperator display '" . cOperatorList . "'"
 syn match cOperator display ';'
 
 " General colors"{{{
+
 hi ColorColumn ctermfg=NONE ctermbg=97 cterm=NONE guifg=NONE guibg=#nb5ac6 gui=NONE
 hi Conceal ctermfg=119 ctermbg=NONE cterm=NONE guifg=#22b996 guibg=NONE gui=NONE
 hi Cursor ctermfg=16 ctermbg=119 cterm=NONE guifg=#000000 guibg=#22b996 gui=NONE
@@ -93,12 +94,14 @@ hi Comment ctermfg=102 ctermbg=NONE cterm=NONE guifg=#4c566a guibg=NONE gui=NONE
 hi Constant ctermfg=208 ctermbg=NONE cterm=NONE guifg=#e56d28 guibg=NONE gui=NONE
 hi String ctermfg=183 ctermbg=NONE cterm=NONE guifg=#2f52a7 guibg=NONE gui=NONE
 hi Number ctermfg=208 ctermbg=NONE cterm=NONE guifg=#e56d28 guibg=NONE gui=NONE
-hi PreProc ctermfg=129 ctermbg=NONE cterm=NONE guifg=#a62163 guibg=NONE gui=NONE
+hi PreProc ctermfg=129 ctermbg=NONE cterm=NONE guifg=#3ad6be guibg=NONE gui=NONE
 hi Identifier ctermfg=75 ctermbg=NONE cterm=NONE guifg=#5b93b3 guibg=NONE gui=NONE
 hi Function ctermfg=156 ctermbg=NONE cterm=NONE guifg=#268bae guibg=NONE gui=NONE
+hi Label ctermfg=63 ctermbg=NONE cterm=NONE guifg=#c837ab guibg=NONE gui=NONE
+hi Constructor ctermfg=63 ctermbg=NONE cterm=NONE guifg=#ff0080 guibg=NONE gui=NONE
 hi Statement ctermfg=63 ctermbg=NONE cterm=NONE guifg=#a62163 guibg=NONE gui=NONE
 hi Type ctermfg=75 ctermbg=NONE cterm=NONE guifg=#db5ac6 guibg=NONE gui=NONE
-hi Special ctermfg=208 ctermbg=NONE cterm=NONE guifg=#e56d28 guibg=NONE gui=NONE
+hi Special ctermfg=208 ctermbg=NONE cterm=NONE guifg=#8cff8a guibg=NONE gui=NONE
 hi DiagnosticError ctermfg=168 ctermbg=NONE cterm=NONE guifg=#9a3983 guibg=#2b1211 gui=NONE
 hi DiagnosticWarn ctermfg=226 ctermbg=NONE cterm=NONE guifg=#bf8e3b guibg=#2b2a11 gui=NONE
 hi DiagnosticInfo ctermfg=24 ctermbg=NONE cterm=NONE guifg=#5b93b3 guibg=#162c2e gui=NONE
@@ -113,7 +116,7 @@ hi link Conditional Statement
 hi link Repeat Statement
 hi link Operator Statement
 hi link Keyword Statement
-hi link Label Statement
+"hi link Label Statement
 hi link Exception Statement
 hi link Include Preproc
 hi link Define Statement
@@ -195,3 +198,9 @@ hi LspInformationText ctermfg=24 ctermbg=NONE cterm=NONE guifg=#5b93b3 guibg=#16
 hi LspInformationHighlight cterm=undercurl gui=undercurl guisp=#5b93b3
 hi LspInformationVirtualText ctermfg=24 ctermbg=NONE cterm=NONE guifg=#5b93b3 guibg=#162c2e gui=NONE
 "}}}
+
+"Neorg
+hi @text.strong gui=bold
+
+hi link @neorg.headings.2.title Constructor
+hi link @neorg.headings.2.prefix Constructor
