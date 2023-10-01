@@ -14,5 +14,7 @@ require('pluginsconfigs.todonotesconfile')
 
 
 
+
+
 vim.opt.laststatus = 3;
 

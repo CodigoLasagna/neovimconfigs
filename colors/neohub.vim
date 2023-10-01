@@ -201,6 +201,7 @@ hi LspInformationVirtualText ctermfg=24 ctermbg=NONE cterm=NONE guifg=#5b93b3 gu
 
 "Neorg
 hi @text.strong gui=bold
+hi @text.emphasis gui=italic
 
-hi link @neorg.headings.2.title Constructor
-hi link @neorg.headings.2.prefix Constructor
+hi link @neorg.headings.5.title Constructor
+hi link @neorg.headings.5.prefix Constructor

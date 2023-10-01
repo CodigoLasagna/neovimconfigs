@@ -1,4 +1,4 @@
--- Get hostname --
+-- apply some configs deppending on the ecosystem --
 function Get_hostname()
 	local status, hostname = pcall(vim.loop.os_gethostname)
 	if status then
@@ -11,7 +11,6 @@ end
 -- save hostname --
 Hostname = Get_hostname() -- will be global
 
--- apply some configs deppending on the ecosystem --
 if Hostname then
 	if Hostname == "LEGION" then
 		vim.cmd('colorscheme eros_net')

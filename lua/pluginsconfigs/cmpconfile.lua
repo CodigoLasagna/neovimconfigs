@@ -74,12 +74,19 @@ require('lspconfig')['jdtls'].setup {
 	root_dir = function(fname)
 		return vim.fn.getcwd()
 	end,
-	--- cmd = {
-	--- 	'jdtls',
-	--- 	'-vmargs',
-	--- 	'-Dorg.eclipse.jdt.ls.taskTags=',
-	--- 	'-Dorg.eclipse.jdt.ls.taskPriorities='
-	--- },
+	cmd = {
+		'jdtls',
+		'--add-vm-args',
+		'-Xmx1G',
+		'-Xms100m',
+		'-Dorg.eclipse.jdt.ls.taskTags=',
+		'-Dorg.eclipse.jdt.ls.taskPriorities='
+	},
+	filetypes = {'java'},  -- Especifica los tipos de archivo en los que jdtls se activará
+	on_attach = function(client)
+		-- Acciones adicionales a realizar cuando el servidor LSP se conecta
+		print('jdtls is now attached!')
+	end,
 }
 require('lspconfig')['r_language_server'].setup {
 	capabilities = capabilities
