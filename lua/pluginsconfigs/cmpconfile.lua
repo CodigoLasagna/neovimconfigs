@@ -55,7 +55,7 @@ require('lspconfig')['pylsp'].setup {
 				mccabe = { enabled = false },
 				pycodestyle = { enabled = false },
 				pyflakes = { enabled = true },
-				pylint = { enabled = true },
+				pylint = { enabled = false },
 			}
 		}
 	},
