@@ -48,6 +48,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['pylsp'].setup {
+	root_dir = function(fname)
+		return vim.fn.getcwd()
+	end,
 	capabilities = capabilities,
 	settings = {
 		pylsp = {
