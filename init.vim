@@ -36,6 +36,7 @@ call plug#begin()
 	Plug 'sharkdp/fd'
 	Plug 'nvim-telescope/telescope.nvim'
 	Plug 'nvim-lua/plenary.nvim'
+	Plug 'cljoly/telescope-repo.nvim'
 	"Neorg test
 	Plug 'nvim-neorg/neorg'
 	"Git

@@ -12,6 +12,7 @@ require('pluginsconfigs.telescopeconfile')
 require('pluginsconfigs.neorgconfile')
 require('pluginsconfigs.todonotesconfile')
 require('pluginsconfigs.adbodconfile')
+require('pluginsconfigs.telescoperepoconfile')
 
 
 
