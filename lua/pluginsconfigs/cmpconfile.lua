@@ -63,6 +63,9 @@ require('lspconfig')['pylsp'].setup {
 		}
 	},
 }
+require('lspconfig')['sqlls'].setup {
+	capabilities = capabilities
+}
 require('lspconfig')['clangd'].setup {
 	capabilities = capabilities,
 	cmd = { "clangd","--completion-style=detailed" }
@@ -143,4 +146,5 @@ require'lspconfig'.lua_ls.setup {
 		return true
 	end
 }
+
 

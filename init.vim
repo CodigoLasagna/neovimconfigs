@@ -56,6 +56,12 @@ call plug#begin()
 	Plug 'folke/trouble.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'folke/todo-comments.nvim'
+	"Database
+	Plug 'tpope/vim-dadbod'
+	Plug 'kristijanhusak/vim-dadbod-completion'
+	Plug 'kristijanhusak/vim-dadbod-ui'
+	
+	"Plug 'neoclide/coc.nvim'
 call plug#end()
 
 """Plugin Options"""

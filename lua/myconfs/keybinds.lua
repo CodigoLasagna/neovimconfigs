@@ -52,3 +52,6 @@ vim.api.nvim_set_keymap('n', '<Esc>', ':<C-\\><C-n>', { noremap = true, silent =
 
 -- Compile --
 vim.api.nvim_set_keymap('n', '<C-h>', ':lua Compile()<CR>', { noremap = true, silent = true })
+
+---LEADER
+vim.g.mapleader = ","
