@@ -13,6 +13,7 @@ require('pluginsconfigs.neorgconfile')
 require('pluginsconfigs.todonotesconfile')
 require('pluginsconfigs.adbodconfile')
 require('pluginsconfigs.telescoperepoconfile')
+require('pluginsconfigs.cellularautomatonconfile')
 
 
 

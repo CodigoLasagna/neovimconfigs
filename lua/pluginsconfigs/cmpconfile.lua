@@ -117,6 +117,11 @@ require('lspconfig')['asm_lsp'].setup {
 		end,
 	capabilities = capabilities
 }
+
+---require('lspconfig')['uiua'].setup {
+---	capabilities = capabilities,
+---	cmd = { "uiua", "lsp" }
+---}
 require'lspconfig'.lua_ls.setup {
 	on_init = function(client)
 		local path = client.workspace_folders[1].name

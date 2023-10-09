@@ -62,7 +62,8 @@ call plug#begin()
 	Plug 'kristijanhusak/vim-dadbod-completion'
 	Plug 'kristijanhusak/vim-dadbod-ui'
 	
-	"Plug 'neoclide/coc.nvim'
+	"cellular
+	Plug 'Eandrju/cellular-automaton.nvim'
 call plug#end()
 
 """Plugin Options"""
