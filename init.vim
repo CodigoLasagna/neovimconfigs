@@ -61,6 +61,7 @@ call plug#begin()
 	Plug 'tpope/vim-dadbod'
 	Plug 'kristijanhusak/vim-dadbod-completion'
 	Plug 'kristijanhusak/vim-dadbod-ui'
+	"Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
 	
 	"cellular
 	Plug 'Eandrju/cellular-automaton.nvim'

@@ -64,7 +64,30 @@ require('lspconfig')['pylsp'].setup {
 	},
 }
 require('lspconfig')['sqlls'].setup {
-	capabilities = capabilities
+	capabilities = capabilities,
+	cmd = { "sql-language-server", "up", "--method", "stdio" },
+	filetypes = { "sql", "mysql" },
+	-- root_dir = function(fname)
+	-- 	return vim.fn.getcwd()
+	-- end,
+	-- settings = {
+	-- 	sqlls = {
+	-- 		connection = {
+	-- 			server = "localhost",
+	-- 			database = "AdventureWorks2019",
+	-- 			user = "sa",
+	-- 			password = "0048728Ckharon",
+	-- 			options = {
+	-- 				encrypt = false, -- Opciones adicionales de conexión
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
+	-- autocompletion = { -- Configuración específica de autocompletado
+	-- 	enable = true, -- Habilita el autocompletado
+	-- 	triggerCharacters = { ".", " " }, -- Caracteres que desencadenarán el autocompletado
+	-- 	keywordInsert = true, -- Insertar automáticamente palabras clave SQL
+	-- },
 }
 require('lspconfig')['clangd'].setup {
 	capabilities = capabilities,
