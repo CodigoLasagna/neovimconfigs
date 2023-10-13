@@ -264,7 +264,7 @@ function Compile()
 					let choice = input("Ingrese el número de la clase a ejecutar: ")
 					if choice >= 1 && choice <= len(main_classes)
 						let selected_class = main_classes[choice - 1]
-						vs
+						split
 						execute 'term java -cp ' . out_dir . ' ' . selected_class
 					else
 						echo "Selección inválida."
