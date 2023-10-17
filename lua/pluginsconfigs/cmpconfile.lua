@@ -91,7 +91,10 @@ require('lspconfig')['sqlls'].setup {
 }
 require('lspconfig')['clangd'].setup {
 	capabilities = capabilities,
-	cmd = { "clangd","--completion-style=detailed" }
+	cmd = { "clangd","--completion-style=detailed" },
+	root_dir = function(fname)
+		return vim.fn.getcwd()
+	end,
 }
 require('lspconfig')['html'].setup {
 	cmd = { "vscode-html-language-server", "--stdio" },

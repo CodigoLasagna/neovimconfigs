@@ -197,7 +197,7 @@ function Compile()
 			:make
 			:make cleanO
 			:execute 'e' fnameescape(file_d)
-			:vs|:term '../main'
+			:split|:term '../main'
 		elseif line ==# '//nr 1'
 			:e ../../main.cpp
 			:make
@@ -211,7 +211,7 @@ function Compile()
 			:vs|:term echo 'PROGRAM COMPILED'; echo 'CMD STARTED'; echo ''; WINEDEBUG=-all wine cmd.exe /c main.exe
 		else
 			:make
-			:vs|:term ./main
+			:split|:term ./main
 		endif
 	elseif &filetype ==# 'javascript'
 		if line ==# '//nodejs'
