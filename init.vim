@@ -211,7 +211,7 @@ function Compile()
 			:vs|:term echo 'PROGRAM COMPILED'; echo 'CMD STARTED'; echo ''; WINEDEBUG=-all wine cmd.exe /c main.exe
 		else
 			:make
-			:split|:term ./main
+			:vs|:term ./main
 		endif
 	elseif &filetype ==# 'javascript'
 		if line ==# '//nodejs'
