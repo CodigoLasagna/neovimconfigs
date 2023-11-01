@@ -127,14 +127,22 @@ require('lspconfig')['r_language_server'].setup {
 require('lspconfig')['gdscript'].setup {
 	capabilities = capabilities
 }
+
 require('lspconfig')['tsserver'].setup {
 	capabilities = capabilities,
 	init_options = {
-			preferences = {
-					disableSuggestions = true
-			}
-	}
+		preferences = {
+			disableSuggestions = true
+		}
+	},
+	root_dir = require'lspconfig.util'.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+	-- root_dir = function(fname)
+	-- 	-- Debes especificar el directorio raíz de tu proyecto aquí.
+	-- 	return vim.fn.getcwd()
+	-- end,
+	-- filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
 }
+
 require('lspconfig')['asm_lsp'].setup {
 	cmd = { "asm-lsp" },
 	filetypes = { "asm", "vmasm", "s", "S" },
