@@ -170,140 +170,6 @@ function! Writing()
 	endif
 endfunction
 
-function Compile()
-	let current_extension = expand('%:e')
-	let current_path = expand('%:p:h')
-	let current_file = expand('%:t')
-	:w
-	:let file_d=expand('%:p')
-	:let b:ext_type=expand('%:e')
-	:let line=getline(1)
-	if &filetype ==# 'python'
-		if line ==# '# i'
-			:make
-			:echo 'Interactive Mode'
-			:vs|term python -i %
-		elseif line ==# '#flask'
-			:vs|term export FLASK_APP=main.py ; export FLASK_ENV=development ; flask run
-		elseif line ==# '#noterm'
-			:!python %
-		else
-			"":echo 'Normal mode'
-			:vs|:term 'make'
-		endif
-	elseif &filetype ==# 'c' || &filetype ==# 'cpp'
-		if line ==# '//nr'
-			:e ../main.cpp
-			:make
-			:make cleanO
-			:execute 'e' fnameescape(file_d)
-			:split|:term '../main'
-		elseif line ==# '//nr 1'
-			:e ../../main.cpp
-			:make
-			:make cleanO
-			:execute 'e' fnameescape(file_d)
-			:vs|:term '../../main'
-		elseif line ==# '//avr'
-			:make
-		elseif line ==# '//win'
-			:make
-			:vs|:term echo 'PROGRAM COMPILED'; echo 'CMD STARTED'; echo ''; WINEDEBUG=-all wine cmd.exe /c main.exe
-		else
-			:make
-			:vs|:term ./main
-		endif
-	elseif &filetype ==# 'javascript'
-		if line ==# '//nodejs'
-			:sp|:resize 15|:term node %
-		elseif line ==# '//nodejs dm'
-			:sp|:resize 15|:term npm start
-		else
-			:vs|:term node %
-		endif
-	elseif &filetype ==# 'tex'
-		:silent !latex %
-		:silent !dvipdf main.dvi
-		if line ==# '%z'
-			:silent !zathura *.pdf & disown
-		endif
-	elseif &filetype ==# 'html'
-		:!qutebrowser % &
-	elseif current_extension ==# 'java'
-		let makefile_dir = findfile('makefile', expand('%:p:h') . ';')
-		if makefile_dir == ''
-			echo "No se encontro el makefile"
-		else
-			let makefile_path = fnamemodify(makefile_dir, ':h')
-			execute "cd" . makefile_path
-			make
-			let out_dir = makefile_path . '/out'
-			let java_files = systemlist('find ' . shellescape(out_dir) . ' -name "*.class" -printf "%P\n"')
-	
-			if len(java_files) == 0
-				echo "No se encontraron clases compiladas en el directorio /out"
-			else
-				echo "Clases disponibles en /out con método main:"
-				let class_count = 0
-				let main_classes = []
-	
-				for java_file in java_files
-					let class_name = fnamemodify(java_file, ':r')
-					let javap_output = system('javap -public -classpath ' . shellescape(out_dir) . ' ' . class_name)
-					
-					if javap_output =~ 'public static void main('
-						let class_count += 1
-						call add(main_classes, class_name)
-						echo '[' . class_count . '] ' . class_name
-					endif
-				endfor
-				
-				if len(main_classes) == 0
-					echo "No se encontraron clases con método main en el directorio /out"
-				else
-					let choice = input("Ingrese el número de la clase a ejecutar: ")
-					if choice >= 1 && choice <= len(main_classes)
-						let selected_class = main_classes[choice - 1]
-						split
-						execute 'term java -cp ' . out_dir . ' ' . selected_class
-					else
-						echo "Selección inválida."
-					endif
-				endif
-			endif
-		endif
-	elseif &filetype ==# 'r'
-		if line ==# '#R'
-			:w
-			:sp|term R --no-save < %
-		else
-			:w
-			:sp|term Rscript %
-		endif
-	elseif &filetype ==# 'pdf'
-		:silent !zathura % & disown
-	elseif &filetype ==# 'haskell'
-		:sp|term runghc %
-	elseif &filetype ==# 'asm'
-		:make
-		:vs|term ./main
-	elseif &filetype ==# 'ruby'
-		:vs|term ruby %
-	elseif b:ext_type ==# 'gd'
-		:w|GodotRun ./scene.tscn
-	elseif b:ext_type ==# 'carbon'
-		:vs|term bazel run //explorer -- ./% 
-	elseif b:ext_type ==# 'v'
-		:vs|term v run % 
-	elseif b:ext_type ==# 'nl'
-		:vs|term ../main
-	elseif &filetype ==# 'lua'
-		:vs|:term 'make'
-	endif
-	"":NERDTreeRefreshRoot
-	:normal a
-endfunction
-
 """Basic configs"""
 let g:loaded_perl_provider = 0
 set list lcs=tab:\│\ ,space:.
@@ -357,8 +223,8 @@ set termguicolors
 set guicursor+=i:ver100-iCursor
 set guicursor+=i:blinkon1
 """Compilers"""
-imap <C-b> <C-o>:call Compile()"<CR>
-nmap <C-b> :call Compile()<CR>
+"imap <C-b> <C-o>:call Compile()"<CR>
+"nmap <C-b> :call Compile()<CR>
 
 """Auto completion"""
 set completeopt=menu,menuone,noselect

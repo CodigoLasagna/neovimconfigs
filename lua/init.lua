@@ -1,4 +1,5 @@
 -- load my own configs
+require('myconfs.createTermprog')
 require('myconfs.ecosystem')
 require('myconfs.compileconf')
 require('myconfs.keybinds')

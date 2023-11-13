@@ -124,6 +124,16 @@ require('lspconfig')['r_language_server'].setup {
 	capabilities = capabilities
 }
 
+require('lspconfig')['csharp_ls'].setup {
+	capabilities = capabilities,
+	cmd = { "csharp-ls" },
+	filetypes = { "cs" },
+	init_options = {
+		AutomaticWorkspaceInit = true,
+	},
+root_dir = require'lspconfig'.util.root_pattern('*.git', 'package.json', '*.sln', '.git'),
+}
+
 require('lspconfig')['gdscript'].setup {
 	capabilities = capabilities
 }
