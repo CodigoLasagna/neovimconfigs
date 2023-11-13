@@ -2,6 +2,9 @@ local function find_root_dir()
 	local current_dir = vim.fn.getcwd()
 	repeat
 		if
+			vim.fn.filereadable(current_dir .. '/package.json') == 1 or
+			vim.fn.filereadable(current_dir .. '/*.sln') == 1 or
+			vim.fn.filereadable(current_dir .. '/*.git') == 1 or
 			vim.fn.filereadable(current_dir .. '/.git') == 1 or
 			vim.fn.filereadable(current_dir .. '/.gitignore') == 1 or
 			vim.fn.filereadable(current_dir .. '/makefile') == 1 or
@@ -22,6 +25,10 @@ function Compile()
 		vim.api.nvim_feedkeys('make\n', 'n', true)
 	elseif (filetype == "c" or filetype == "cpp") then
 		vim.api.nvim_feedkeys('make\n', 'n', true)
+	elseif (filetype == "cs" or filetype == "cpp") then
+		local input = vim.fn.input('Directorio de APP: ')
+		input = 'cd '.. input .. ' ; dotnet run \n'
+		vim.api.nvim_feedkeys(input, 'n', true)
 	elseif (filetype == "java") then
 		local input = vim.fn.input('Nombre de la clase: ')
 		input = 'make ; java -cp out/ ' .. input .. '\n'
