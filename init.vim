@@ -1,10 +1,6 @@
-"""Load and install Plugins"""
-"Test
 call plug#begin()
 	Plug 'nvim-treesitter/nvim-treesitter'
 	Plug 'nvim-treesitter/playground'
-	""""Plug 'kristijanhusak/vim-dadbod-ui'
-	""""Plug 'habamax/vim-godot'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'kyazdani42/nvim-tree.lua'
 	Plug 'nvim-lualine/lualine.nvim'
@@ -15,12 +11,6 @@ call plug#begin()
 	""" Plugins for writing
 	""""Plug 'dpelle/vim-LanguageTool'
 	""""Plug 'lervag/vimtex'
-	""""""flutter
-	""""Plug 'dart-lang/dart-vim-plugin'
-	""""Plug 'thosakwe/vim-flutter'
-	""""Plug 'natebosch/vim-lsc'
-	""""Plug 'natebosch/vim-lsc-dart'
-	""cmp
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'hrsh7th/cmp-nvim-lsp'
@@ -76,17 +66,6 @@ let g:vimsence_editing_details = 'Editing: {}'
 let g:vimsence_editing_state = 'Working on: {}'
 let g:vimsence_file_explorer_text = 'In NERDTree'
 let g:vimsence_file_explorer_details = 'Looking for files'
-""Nerd Tree"
-"let NERDTreeShowLineNumbers=1
-"let NERDTreeMinimalUI=1
-"let NERDTreeShowHidden=1
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * NERDTree /home/hanckedd/archives/work
-"let g:NERDTreeFileExtensionHighlightFullName = 1
-"let g:NERDTreeExactMatchHighlightFullName = 1
-"let g:NERDTreePatternMatchHighlightFullName = 1
-"let g:NERDTreeGitStatusUseNerdFonts = 1
-"set updatetime=100
 ""Minimap""
 let g:minimap_width = 10
 let g:minimap_auto_start_win_enter = 1
