@@ -52,8 +52,8 @@ vim.api.nvim_set_keymap('n', '<Esc>', ':<C-\\><C-n>', { noremap = true, silent =
 
 -- Compile --
 vim.api.nvim_set_keymap('n', '<C-b>', ':lua Compile()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-t>', ':lua OpenTerminal()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-t>', ':<C-\\><C-n><Bar>:lua OpenTerminal()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-t>', ':lua ToggleTerminal()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-t>', ':<C-\\><C-n><Bar>:lua ToggleTerminal()<CR>', { noremap = true, silent = true })
 
 ---LEADER
 vim.g.mapleader = ","
