@@ -17,7 +17,7 @@ function Compile()
 	local root_dir = find_root_dir()
 	vim.cmd('wa') -- save all files
 	print(root_dir)
-	OpenTerminal(root_dir)
+	ToggleTerminal(root_dir)
 	if (filetype == "python") then
 		vim.api.nvim_feedkeys('make\n', 'n', true)
 	elseif (filetype == "c" or filetype == "cpp") then
