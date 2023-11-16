@@ -45,15 +45,17 @@ vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', 'jk', '<C-\\><C-n>', { noremap = true, silent = true })
 ---- Close everything ----
 -- fkc it close everything --
-vim.api.nvim_set_keymap('n', '<C-c>', ':wqa<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-c>', '<C-\\><C-n>:wa<CR>:qa!<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-c>', ':wa<CR>:qa!<CR>', { noremap = true, silent = true })
 -- exit term mode --
-vim.api.nvim_set_keymap('n', '<Esc>', ':<C-\\><C-n>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('t', '<C-c>', '<C-\\><C-n>:wa<CR>:qa!<CR>', { noremap = true, silent = true })
 
 
 -- Compile --
 vim.api.nvim_set_keymap('n', '<C-b>', ':lua Compile()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-t>', ':lua ToggleTerminal()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<C-t>', ':<C-\\><C-n><Bar>:lua ToggleTerminal()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-t>', ':lua ToggleTerminal(nil)<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-t>', '<C-\\><C-n>:lua ToggleTerminal(nil)<CR>', { noremap = true, silent = true })
 
 ---LEADER
 vim.g.mapleader = ","

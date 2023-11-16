@@ -24,10 +24,10 @@ function Compile()
 	if (filetype == "python") then
 		vim.api.nvim_feedkeys('make\n', 'n', true)
 	elseif (filetype == "c" or filetype == "cpp") then
-		vim.api.nvim_feedkeys('make\n', 'n', true)
-	elseif (filetype == "cs" or filetype == "cpp") then
+		vim.api.nvim_feedkeys('make;./main\n', 'n', true)
+	elseif (filetype == "cs") then
 		local input = vim.fn.input('Directorio de APP: ')
-		input = 'cd '.. input .. ' ; dotnet run \n'
+		input = 'cd '.. root_dir .. '/' .. input .. ' ; dotnet run \n'
 		vim.api.nvim_feedkeys(input, 'n', true)
 	elseif (filetype == "java") then
 		local input = vim.fn.input('Nombre de la clase: ')
