@@ -23,6 +23,11 @@ if Hostname then
 		vim.cmd('lcd ~/work/coding/')
 		vim.cmd(":let g:notes_directories = ['~/work/coding/notas/']")
 		Main_workingdir = "~/work/coding/"
+	elseif Hostname == "SERVER" then
+		vim.cmd('colorscheme neohub')
+		vim.cmd('lcd ~/work/coding/')
+		vim.cmd(":let g:notes_directories = ['~/work/coding/notas/']")
+		Main_workingdir = "~/work/coding/"
 	else
 		vim.cmd('colorscheme quiet')
 	end
