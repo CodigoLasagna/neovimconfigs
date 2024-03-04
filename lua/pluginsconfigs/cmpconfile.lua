@@ -138,20 +138,21 @@ require('lspconfig')['gdscript'].setup {
 
 require('lspconfig')['tsserver'].setup {
 	capabilities = capabilities,
+	cmd = {"typescript-language-server", "--stdio"},
 	init_options = {
 		preferences = {
 			disableSuggestions = true
 		}
 	},
-	root_dir = require'lspconfig.util'.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+	root_dir = require'lspconfig.util'.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git", "app.json"),
 	-- root_dir = function(fname)
 	-- 	-- Debes especificar el directorio raíz de tu proyecto aquí.
 	-- 	return vim.fn.getcwd()
 	-- end,
-	-- filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+	filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
 }
 
-require('lspconfig')['tsserver'].setup {
+require('lspconfig')['vuels'].setup {
 	capabilities = capabilities,
 	cmd = { "vls" },
 	filetypes = { "vue" },

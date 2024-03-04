@@ -55,6 +55,7 @@ call plug#begin()
 	
 	"cellular
 	Plug 'Eandrju/cellular-automaton.nvim'
+	"eww
 call plug#end()
 
 """Plugin Options"""
