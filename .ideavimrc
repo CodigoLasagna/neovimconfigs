@@ -1,0 +1,22 @@
+"normal"
+nnoremap h ;
+nnoremap j h
+nnoremap k j
+nnoremap l k
+nnoremap ; l
+
+"visual"
+vnoremap h ;
+vnoremap j h
+vnoremap k j
+vnoremap l k
+vnoremap ; l
+
+inoremap jk <Esc>
+tnoremap jk <C-\><C-n>
+nnoremap <A-j> <C-w>h
+nnoremap <A-k> <C-w>j
+nnoremap <A-l> <C-w>k
+nnoremap <A-;> <C-w>l
+
+set clipboard+=unnamedplus   " using system clipboard

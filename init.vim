@@ -28,6 +28,9 @@ call plug#begin()
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'cljoly/telescope-repo.nvim'
 	"Neorg test
+	Plug 'nvim-neotest/nvim-nio'
+	Plug 'pysan3/pathlib.nvim'
+	Plug 'nvim-neorg/lua-utils.nvim'
 	Plug 'nvim-neorg/neorg'
 	"Git
 	Plug 'airblade/vim-gitgutter'

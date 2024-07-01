@@ -94,10 +94,10 @@ require('lspconfig')['clangd'].setup {
 	cmd = { "clangd","--completion-style=detailed" },
 	root_dir = require'lspconfig.util'.root_pattern("makefile", "Makefile", ".git", "*.git"),
 }
-require('lspconfig')['html'].setup {
-	cmd = { "vscode-html-language-server", "--stdio" },
-	capabilities = capabilities,
-}
+-- require('lspconfig')['html'].setup {
+-- 	cmd = { "vscode-html-language-server", "--stdio" },
+-- 	capabilities = capabilities,
+-- }
 
 require('lspconfig')['jdtls'].setup {
 	capabilities = capabilities,
