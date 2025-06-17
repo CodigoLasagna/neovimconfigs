@@ -15,10 +15,11 @@ require('pluginsconfigs.todonotesconfile')
 require('pluginsconfigs.adbodconfile')
 require('pluginsconfigs.telescoperepoconfile')
 require('pluginsconfigs.cellularautomatonconfile')
+require('pluginsconfigs.neogit')
+require('pluginsconfigs.gitgraph')
 
 
 
 
 
 vim.opt.laststatus = 3;
-

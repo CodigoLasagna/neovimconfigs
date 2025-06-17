@@ -136,7 +136,7 @@ require('lspconfig')['gdscript'].setup {
 	capabilities = capabilities
 }
 
-require('lspconfig')['tsserver'].setup {
+require('lspconfig')['ts_ls'].setup {
 	capabilities = capabilities,
 	cmd = {"typescript-language-server", "--stdio"},
 	init_options = {
@@ -211,6 +211,14 @@ require('lspconfig')['asm_lsp'].setup {
 		end,
 	capabilities = capabilities
 }
+
+--local port = os.getenv 'GDScript_Port' or '6005'
+--local cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(port))
+--require('lspconfig')['gdscript'].setup{
+--	cmd = cmd,
+--	filetypes = {"gd", "gdscript", "gdscript3"},
+--	root_dir = require'lspconfig.util'.root_pattern('project.godot', '.git')
+--}
 
 ---require('lspconfig')['uiua'].setup {
 ---	capabilities = capabilities,

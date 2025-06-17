@@ -58,10 +58,20 @@ call plug#begin()
 	
 	"cellular
 	Plug 'Eandrju/cellular-automaton.nvim'
-	"eww
+	"neogit
+	Plug 'sindrets/diffview.nvim'
+	Plug 'NeogitOrg/neogit'
+	"gitgraph
+	Plug 'isakbm/gitgraph.nvim'
+	"vim python virtual env
+	Plug 'jmcantrell/vim-virtualenv'
+
 call plug#end()
 
 """Plugin Options"""
+"vim-virtualenv
+"let g:virtualenvwrapper_workon_cmd = 'source ./novo/bin/activate'
+""Neogit""
 ""Vimsence""
 let g:vimsence_client_id = '439476230543245312'
 let g:vimsence_small_text = 'NeoVim'
