@@ -28,6 +28,11 @@ if Hostname then
 		vim.cmd('lcd ~/work/coding/')
 		vim.cmd(":let g:notes_directories = ['~/work/coding/notas/']")
 		Main_workingdir = "~/work/coding/"
+	elseif Hostname == "OMNIA" then
+		vim.cmd('colorscheme quiet')
+		vim.cmd('lcd ~/archive/work/coding/')
+		vim.cmd(":let g:notes_directories = ['~/archive/work/coding/notes/']")
+		Main_workingdir = "~/archive/work/coding/"
 	else
 		vim.cmd('colorscheme quiet')
 	end
