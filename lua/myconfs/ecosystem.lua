@@ -15,8 +15,10 @@ Main_workingdir = ""
 if Hostname then
 	if Hostname == "LEGION" then
 		vim.cmd('colorscheme eros_net')
-		vim.cmd('lcd ~/gen/archives/work/coding/')
-		vim.cmd(":let g:notes_directories = ['~/gen/archives/work/coding/notes/']")
+		-- vim.cmd('lcd ~/gen/archives/work/coding/')
+		vim.cmd('lcd ~/vault/coding')
+		-- vim.cmd(":let g:notes_directories = ['~/gen/archives/work/coding/notes/']")
+		vim.cmd(":let g:notes_directories = ['~/vault/coding/notes']")
 		Main_workingdir = "~/gen/archives/work/coding/"
 	elseif Hostname == "EONIX" then
 		vim.cmd('colorscheme neohub')
