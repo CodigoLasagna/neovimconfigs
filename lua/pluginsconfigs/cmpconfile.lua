@@ -254,4 +254,13 @@ require'lspconfig'.lua_ls.setup {
 	end
 }
 
+require('lspconfig')['bashls'].setup {
+	cmd = { "bash-language-server", "start" },
+	filetypes = { "sh" },
+	root_dir = function(fname)
+				return vim.loop.cwd()
+		end,
+	capabilities = capabilities
+}
+
 

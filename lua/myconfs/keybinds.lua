@@ -10,6 +10,7 @@ vim.api.nvim_set_keymap('n', 'j', 'h', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'k', 'j', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'l', 'k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', ';', 'l', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-w>', ':lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 -- visual --
 vim.api.nvim_set_keymap('v', 'h', ';', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'j', 'h', { noremap = true, silent = true })

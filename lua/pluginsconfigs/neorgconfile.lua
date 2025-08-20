@@ -3,6 +3,8 @@ if (Hostname == "LEGION") then
 	main_dir = "~/gen/archives/work/coding/notes/"
 elseif (Hostname == "EONIX") then
 	main_dir = "~/work/coding/notes/"
+elseif (Hostname == "OMNIA") then
+	main_dir = "~/archive/work/coding/notes/"
 end
 
 local work_dir = main_dir .. "work"
