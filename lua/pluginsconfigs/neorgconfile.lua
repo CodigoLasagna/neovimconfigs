@@ -1,6 +1,6 @@
 local main_dir = ""
 if (Hostname == "LEGION") then
-	main_dir = "~/gen/archives/work/coding/notes/"
+	main_dir = "~/vault/coding/notes/"
 elseif (Hostname == "EONIX") then
 	main_dir = "~/work/coding/notes/"
 elseif (Hostname == "OMNIA") then
