@@ -10,6 +10,8 @@ end
 local work_dir = main_dir .. "work"
 local school_dir = main_dir .. "school"
 local mundane_dir = main_dir .. "mundane"
+local todo_dir = main_dir .. "todo_dir"
+local hashkeys_dir = main_dir .. "hashkeys"
 
 require'neorg'.setup
 {
@@ -34,6 +36,8 @@ require'neorg'.setup
 					mundane = mundane_dir,
 					work = work_dir,
 					school = school_dir,
+					hashkeys = hashkeys_dir,
+					todo_dir = todo_dir,
 				}
 			}
 		}
