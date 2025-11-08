@@ -46,9 +46,10 @@ cmp.setup.cmdline(':', {
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['pylsp'].setup {
-	root_dir = function(fname)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+vim.lsp.config("pylsp", {
+	root_dir = function()
 		return vim.fn.getcwd()
 	end,
 	capabilities = capabilities,
@@ -61,45 +62,22 @@ require('lspconfig')['pylsp'].setup {
 				pylint = { enabled = false },
 			}
 		}
-	},
-}
-require('lspconfig')['sqlls'].setup {
+	}
+})
+
+vim.lsp.config('sqlls', {
 	capabilities = capabilities,
 	cmd = { "sql-language-server", "up", "--method", "stdio" },
 	filetypes = { "sql", "mysql" },
-	-- root_dir = function(fname)
-	-- 	return vim.fn.getcwd()
-	-- end,
-	-- settings = {
-	-- 	sqlls = {
-	-- 		connection = {
-	-- 			server = "localhost",
-	-- 			database = "AdventureWorks2019",
-	-- 			user = "sa",
-	-- 			password = "0048728Ckharon",
-	-- 			options = {
-	-- 				encrypt = false, -- Opciones adicionales de conexión
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
-	-- autocompletion = { -- Configuración específica de autocompletado
-	-- 	enable = true, -- Habilita el autocompletado
-	-- 	triggerCharacters = { ".", " " }, -- Caracteres que desencadenarán el autocompletado
-	-- 	keywordInsert = true, -- Insertar automáticamente palabras clave SQL
-	-- },
-}
-require('lspconfig')['clangd'].setup {
+})
+
+vim.lsp.config('clangd', {
 	capabilities = capabilities,
 	cmd = { "clangd","--completion-style=detailed" },
 	root_dir = require'lspconfig.util'.root_pattern("makefile", "Makefile", ".git", "*.git"),
-}
--- require('lspconfig')['html'].setup {
--- 	cmd = { "vscode-html-language-server", "--stdio" },
--- 	capabilities = capabilities,
--- }
+})
 
-require('lspconfig')['jdtls'].setup {
+vim.lsp.config('jdtls', {
 	capabilities = capabilities,
 	root_dir = function(fname)
 		return vim.fn.getcwd()
@@ -117,12 +95,14 @@ require('lspconfig')['jdtls'].setup {
 		-- Acciones adicionales a realizar cuando el servidor LSP se conecta
 		print('jdtls is now attached!')
 	end,
-}
-require('lspconfig')['r_language_server'].setup {
-	capabilities = capabilities
-}
+})
 
-require('lspconfig')['csharp_ls'].setup {
+vim.lsp.config('r_language_server', {
+	capabilities = capabilities
+})
+
+
+vim.lsp.config('csharp_ls', {
 	capabilities = capabilities,
 	cmd = { "csharp-ls" },
 	filetypes = { "cs" },
@@ -130,13 +110,13 @@ require('lspconfig')['csharp_ls'].setup {
 		AutomaticWorkspaceInit = true,
 	},
 root_dir = require'lspconfig'.util.root_pattern('*.git', 'package.json', '*.sln', '.git'),
-}
+})
 
-require('lspconfig')['gdscript'].setup {
+vim.lsp.config('gdscript', {
 	capabilities = capabilities
-}
+})
 
-require('lspconfig')['ts_ls'].setup {
+vim.lsp.config('ts_ls', {
 	capabilities = capabilities,
 	cmd = {"typescript-language-server", "--stdio"},
 	init_options = {
@@ -150,9 +130,9 @@ require('lspconfig')['ts_ls'].setup {
 	-- 	return vim.fn.getcwd()
 	-- end,
 	filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
-}
+})
 
-require('lspconfig')['vuels'].setup {
+vim.lsp.config('vuels', {
 	capabilities = capabilities,
 	cmd = { "vls" },
 	filetypes = { "vue" },
@@ -194,37 +174,25 @@ require('lspconfig')['vuels'].setup {
 			}
 		}
 	}
-}
+})
 
-require('lspconfig')['cssls'].setup {
+vim.lsp.config('cssls', {
 	capabilities = capabilities,
 	cmd = { "vscode-css-language-server", "--stdio" },
 	filetypes = { "css", "scss", "less" },
-}
+})
 
 
-require('lspconfig')['asm_lsp'].setup {
+vim.lsp.config('asm_lsp', {
 	cmd = { "asm-lsp" },
 	filetypes = { "asm", "vmasm", "s", "S" },
 	root_dir = function(fname)
 				return vim.loop.cwd()
 		end,
 	capabilities = capabilities
-}
+})
 
---local port = os.getenv 'GDScript_Port' or '6005'
---local cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(port))
---require('lspconfig')['gdscript'].setup{
---	cmd = cmd,
---	filetypes = {"gd", "gdscript", "gdscript3"},
---	root_dir = require'lspconfig.util'.root_pattern('project.godot', '.git')
---}
-
----require('lspconfig')['uiua'].setup {
----	capabilities = capabilities,
----	cmd = { "uiua", "lsp" }
----}
-require'lspconfig'.lua_ls.setup {
+vim.lsp.config('lua_ls', {
 	on_init = function(client)
 		local path = client.workspace_folders[1].name
 		if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -252,15 +220,15 @@ require'lspconfig'.lua_ls.setup {
 		end
 		return true
 	end
-}
+})
 
-require('lspconfig')['bashls'].setup {
+vim.lsp.config('bashls', {
 	cmd = { "bash-language-server", "start" },
 	filetypes = { "sh" },
 	root_dir = function(fname)
 				return vim.loop.cwd()
 		end,
 	capabilities = capabilities
-}
+})
 
 

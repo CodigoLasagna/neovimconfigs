@@ -21,12 +21,28 @@ neogit.setup {
   -- "unicode" is the graph like https://github.com/rbong/vim-flog
   graph_style = "ascii",
   -- Used to generate URL's for branch popup action "pull request".
-  git_services = {
-    ["github.com"] = "https://github.com/${owner}/${repository}/compare/${branch_name}?expand=1",
-    ["bitbucket.org"] = "https://bitbucket.org/${owner}/${repository}/pull-requests/new?source=${branch_name}&t=1",
-    ["gitlab.com"] = "https://gitlab.com/${owner}/${repository}/merge_requests/new?merge_request[source_branch]=${branch_name}",
-    ["azure.com"] = "https://dev.azure.com/${owner}/_git/${repository}/pullrequestcreate?sourceRef=${branch_name}&targetRef=${target}",
+git_services = {
+  ["github.com"] = {
+    commit = "https://github.com/${owner}/${repository}/commit/${commit}",
+    pull_request = "https://github.com/${owner}/${repository}/compare/${branch_name}?expand=1",
+    tree = "https://github.com/${owner}/${repository}/tree/${branch_name}"
   },
+  ["gitlab.com"] = {
+    commit = "https://gitlab.com/${owner}/${repository}/-/commit/${commit}",
+    pull_request = "https://gitlab.com/${owner}/${repository}/-/merge_requests/new?merge_request[source_branch]=${branch_name}",
+    tree = "https://gitlab.com/${owner}/${repository}/-/tree/${branch_name}"
+  },
+  ["bitbucket.org"] = {
+    commit = "https://bitbucket.org/${owner}/${repository}/commits/${commit}",
+    pull_request = "https://bitbucket.org/${owner}/${repository}/pull-requests/new?source=${branch_name}&t=1",
+    tree = "https://bitbucket.org/${owner}/${repository}/src/${branch_name}"
+  },
+  ["azure.com"] = {
+    commit = "https://dev.azure.com/${owner}/_git/${repository}/commit/${commit}",
+    pull_request = "https://dev.azure.com/${owner}/_git/${repository}/pullrequestcreate?sourceRef=${branch_name}&targetRef=${target}",
+    tree = "https://dev.azure.com/${owner}/_git/${repository}?version=GB${branch_name}"
+  }
+},
   -- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example below will use the native fzf
   -- sorter instead. By default, this function returns `nil`.
   telescope_sorter = function()
